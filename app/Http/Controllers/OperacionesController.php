@@ -51,4 +51,31 @@ public function esPrimo($numero) {
         if ($suma1 == $num2 && $suma2 == $num1) return "$num1 y $num2 son amigos";
         return "No son amigos";
     }
+public function frm_sumar() {
+    return view('frm_sumar');
+}
+
+
+public function sumar(Request $request) {
+    $n1 = $request->numero1;
+    $n2 = $request->numero2;
+
+    $resultado = $n1 + $n2;
+
+    return "El resultado de la suma es: " . $resultado;
+}
+// Muestra el formulario de la resta en blanco
+public function frm_restar() {
+    return view('frm_restar');
+}
+
+// Procesa los números y hace la resta
+public function restar(Request $request) {
+    $n1 = $request->numero1;
+    $n2 = $request->numero2;
+
+    $resultado = $n1 - $n2;
+
+    return "El resultado de la resta es: " . $resultado;
+}
 }
